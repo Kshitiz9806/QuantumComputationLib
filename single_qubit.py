@@ -14,8 +14,7 @@ class SingleQubit:
             raise Exception("Enter a valid qubit state")
 
     def print_state(self):
-        # print(str(self.qubit_state[0][0]) + "|0} + " + str(self.qubit_state[1][0]) + "|1}")
-        print(self.qubit_state)
+        print("(" + str(self.qubit_state[0][0]) + ")|0} + (" + str(self.qubit_state[1][0]) + ")|1}")
     
     def Xgate(self):
         self.qubit_state = pauliGates.PauliGates.pauli_x_gate(self.qubit_state)
