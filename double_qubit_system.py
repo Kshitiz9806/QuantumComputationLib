@@ -3,7 +3,7 @@ import gates.sycamoregate as sycamoreGate
 import gates.czgate as czGate
 import gates.swapgate as swapGate
 
-class doubleQubitSystem:
+class DoubleQubitSystem:
 
     def __init__(self, q1, q2):
         a = q1.qubit_state[0][0]*q2.qubit_state[0][0]

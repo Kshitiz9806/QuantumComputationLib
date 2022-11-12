@@ -9,7 +9,7 @@ class SingleQubit:
     def __init__(self, x):
         if(x<=1 and x>=0):
             y = (1 - x**2)**0.5
-            self.qubit_state = [[x],[y]]
+            self.qubit_state = [[y],[x]]
         else:
             raise Exception("Enter a valid qubit state")
 
