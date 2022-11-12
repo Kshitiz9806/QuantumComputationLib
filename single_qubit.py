@@ -13,19 +13,19 @@ class SingleQubit:
         else:
             raise Exception("Enter a valid qubit state")
 
-    def print_state(self):
+    def printState(self):
         print("(" + str(self.qubit_state[0][0]) + ")|0} + (" + str(self.qubit_state[1][0]) + ")|1}")
     
-    def Xgate(self):
+    def xGate(self):
         self.qubit_state = pauliGates.PauliGates.pauli_x_gate(self.qubit_state)
 
-    def Ygate(self):
+    def yGate(self):
         self.qubit_state = pauliGates.PauliGates.pauli_y_gate(self.qubit_state)
 
-    def Zgate(self):
+    def zGate(self):
         self.qubit_state = pauliGates.PauliGates.pauli_z_gate(self.qubit_state)
 
-    def Hgate(self):
+    def hGate(self):
         self.qubit_state = hGate.HadamardGate.h_gate(self.qubit_state)
         
     def measure0(self):
@@ -38,27 +38,27 @@ class SingleQubit:
         print(self.qubit_state[1][0])
         self.qubit_state[1][0] = 1
 
-    def Pgate(self, phase):
+    def pGate(self, phase):
         self.qubit_state = pGate.phased_gate.p_gate(self.qubit_state, phase)
         
-    def VirtualZgate(self):
+    def virtualzGate(self):
         self.qubit_state = pGate.phased_gate.virtual_z_gate(self.qubit_state)
 
-    def Igate(self):
+    def iGate(self):
         self.qubit_state = pGate.phased_gate.i_gate(self.qubit_state)
 
-    def Sgate(self):
+    def sGate(self):
         self.qubit_state = pGate.phased_gate.s_gate(self.qubit_state)
     
-    def Sdaggergate(self):
+    def sDaggerGate(self):
         self.qubit_state = pGate.phased_gate.s_dagger_gate(self.qubit_state)
 
-    def Tgate(self):
+    def tGate(self):
         self.qubit_state = pGate.phased_gate.t_gate(self.qubit_state)
     
-    def Tdaggergate(self):
+    def tDaggergate(self):
         self.qubit_state = pGate.phased_gate.t_dagger_gate(self.qubit_state)
 
-    def Ugate(self, theta, phi, lamda):
+    def uGate(self, theta, phi, lamda):
         self.qubit_state = uGate.u_gate.u_gate(self.qubit_state, theta, phi, lamda)
         
