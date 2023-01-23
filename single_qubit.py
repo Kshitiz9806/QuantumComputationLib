@@ -62,3 +62,5 @@ class SingleQubit:
     def uGate(self, theta, phi, lamda):
         self.qubit_state = uGate.u_gate.u_gate(self.qubit_state, theta, phi, lamda)
         
+    def getState(self):
+        return self.qubit_state
