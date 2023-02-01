@@ -200,3 +200,9 @@ class MultipleQubitSystem:
             q1, q2 = twoQubitSystem.getState()
             self.qubit_state[qubit1-1] = q1
             self.qubit_state[qubit2-1] = q2
+
+    def printState(self):
+        print("Printing State of all " + str(self.num_of_qubits) + " qubits")
+        for i in range(self.num_of_qubits):
+            print("Qubit " + str(i+1) + "----->")
+            print(str(self.qubit_state[i][0][0]) + "|0} + " +  str(self.qubit_state[i][1][0]) + "|1}")
