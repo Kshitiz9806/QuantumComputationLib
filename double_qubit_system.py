@@ -33,3 +33,17 @@ class DoubleQubitSystem:
     def czGate(self):
         self.qubit_state = czGate.czGate.cz_gate(self.qubit_state)
     
+    def getState(self):
+        a = self.qubit_state[0][0]
+        b = self.qubit_state[1][0]
+        c = self.qubit_state[2][0]
+        d = self.qubit_state[3][0]
+        if((a!=0) or (b!=0)):
+            q0 = [[a/((a**2 + b**2)**0.5)],[b/((a**2 + b**2)**0.5)]]
+        else:
+            q0 = [[c/((c**2 + d**2)**0.5)],[d/((c**2 + d**2)**0.5)]]
+        if((a!=0) or (c!=0)):
+            q1 = [[a/((a**2 + c**2)**0.5)],[c/((a**2 + c**2)**0.5)]]
+        else:
+            q1 = [[b/((b**2 + d**2)**0.5)],[d/((b**2 + d**2)**0.5)]]
+        return q0, q1
