@@ -130,11 +130,11 @@ class MultipleQubitSystem:
             self.qubit_state[qubit_num-1] = qubit_obj.getState()
 
     def cnotGate(self, qubit1, qubit2):
-        if(self.num_of_qubits<qubit1 or self.num_of_qubits,qubit2):
+        if(self.num_of_qubits<qubit1 or self.num_of_qubits<qubit2):
             raise Exception("Required Qubit numbers does not exist")
         else:
-            q1 = self.qubit_state[qubit1-1]
-            q2 = self.qubit_state[qubit2-2]
+            q1 = singleQubit.SingleQubit(self.qubit_state[qubit1-1][1][0])
+            q2 = singleQubit.SingleQubit(self.qubit_state[qubit2-1][1][0])
             twoQubitSystem = doubleQubit.DoubleQubitSystem(q1, q2)
             twoQubitSystem.cnotGate()
             q1, q2 = twoQubitSystem.getState()
@@ -142,11 +142,11 @@ class MultipleQubitSystem:
             self.qubit_state[qubit2-1] = q2
 
     def swapGate(self, qubit1, qubit2):
-        if(self.num_of_qubits<qubit1 or self.num_of_qubits,qubit2):
+        if(self.num_of_qubits<qubit1 or self.num_of_qubits<qubit2):
             raise Exception("Required Qubit numbers does not exist")
         else:
-            q1 = self.qubit_state[qubit1-1]
-            q2 = self.qubit_state[qubit2-2]
+            q1 = singleQubit.SingleQubit(self.qubit_state[qubit1-1][1][0])
+            q2 = singleQubit.SingleQubit(self.qubit_state[qubit2-1][1][0])
             twoQubitSystem = doubleQubit.DoubleQubitSystem(q1, q2)
             twoQubitSystem.swapGate()
             q1, q2 = twoQubitSystem.getState()
@@ -154,11 +154,11 @@ class MultipleQubitSystem:
             self.qubit_state[qubit2-1] = q2
 
     def sqrtSwapGate(self, qubit1, qubit2):
-        if(self.num_of_qubits<qubit1 or self.num_of_qubits,qubit2):
+        if(self.num_of_qubits<qubit1 or self.num_of_qubits<qubit2):
             raise Exception("Required Qubit numbers does not exist")
         else:
-            q1 = self.qubit_state[qubit1-1]
-            q2 = self.qubit_state[qubit2-2]
+            q1 = singleQubit.SingleQubit(self.qubit_state[qubit1-1][1][0])
+            q2 = singleQubit.SingleQubit(self.qubit_state[qubit2-1][1][0])
             twoQubitSystem = doubleQubit.DoubleQubitSystem(q1, q2)
             twoQubitSystem.sqrtSwapGate()
             q1, q2 = twoQubitSystem.getState()
@@ -166,11 +166,11 @@ class MultipleQubitSystem:
             self.qubit_state[qubit2-1] = q2
 
     def sqrtISwapGate(self, qubit1, qubit2):
-        if(self.num_of_qubits<qubit1 or self.num_of_qubits,qubit2):
+        if(self.num_of_qubits<qubit1 or self.num_of_qubits<qubit2):
             raise Exception("Required Qubit numbers does not exist")
         else:
-            q1 = self.qubit_state[qubit1-1]
-            q2 = self.qubit_state[qubit2-2]
+            q1 = singleQubit.SingleQubit(self.qubit_state[qubit1-1][1][0])
+            q2 = singleQubit.SingleQubit(self.qubit_state[qubit2-1][1][0])
             twoQubitSystem = doubleQubit.DoubleQubitSystem(q1, q2)
             twoQubitSystem.sqrtISwapGate()
             q1, q2 = twoQubitSystem.getState()
@@ -178,11 +178,11 @@ class MultipleQubitSystem:
             self.qubit_state[qubit2-1] = q2
 
     def sycamoreGate(self, qubit1, qubit2):
-        if(self.num_of_qubits<qubit1 or self.num_of_qubits,qubit2):
+        if(self.num_of_qubits<qubit1 or self.num_of_qubits<qubit2):
             raise Exception("Required Qubit numbers does not exist")
         else:
-            q1 = self.qubit_state[qubit1-1]
-            q2 = self.qubit_state[qubit2-2]
+            q1 = singleQubit.SingleQubit(self.qubit_state[qubit1-1][1][0])
+            q2 = singleQubit.SingleQubit(self.qubit_state[qubit2-1][1][0])
             twoQubitSystem = doubleQubit.DoubleQubitSystem(q1, q2)
             twoQubitSystem.sycamoreGate()
             q1, q2 = twoQubitSystem.getState()
@@ -190,11 +190,11 @@ class MultipleQubitSystem:
             self.qubit_state[qubit2-1] = q2
 
     def czGate(self, qubit1, qubit2):
-        if(self.num_of_qubits<qubit1 or self.num_of_qubits,qubit2):
+        if(self.num_of_qubits<qubit1 or self.num_of_qubits<qubit2):
             raise Exception("Required Qubit numbers does not exist")
         else:
-            q1 = self.qubit_state[qubit1-1]
-            q2 = self.qubit_state[qubit2-2]
+            q1 = singleQubit.SingleQubit(self.qubit_state[qubit1-1][1][0])
+            q2 = singleQubit.SingleQubit(self.qubit_state[qubit2-1][1][0])
             twoQubitSystem = doubleQubit.DoubleQubitSystem(q1, q2)
             twoQubitSystem.czGate()
             q1, q2 = twoQubitSystem.getState()
