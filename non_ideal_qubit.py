@@ -25,5 +25,28 @@ class NonIdealQubit:
         b_final = ((b**2)*np.exp(-qf_total*time/omega))**0.5
         self.qubit_state = [[a_final],[b_final]]
 
-    def printState(self):
+    def printState( self):
         print("(" + str(self.qubit_state[0][0]) + ")|0} + (" + str(self.qubit_state[1][0]) + ")|1}")
+
+    def xGate(self):
+        steps = 1000
+        gate_time = 50
+        phase_steps = np.pi/(2*steps)
+        time_steps = gate_time/steps
+        b_start_value = self.qubit_state[1][0]
+        a_start_value = self.qubit_state[0][0]
+        f1 = np.cos(phase_steps)
+        f2 = np.sin(phase_steps)
+        for step in range(0, steps):
+            b = self.qubit_state[0][0]
+            a = self.qubit_state[1][0] 
+            if(a_start_value<0):
+                a = -1*a
+            if(b_start_value<0):
+                b = -1*b
+            b = b*f1 - a*f2
+            a = a*f1 + b*f2
+            b_start_value = b
+            a_start_value = a
+            self.qubit_state = [[abs(b)],[abs(a)]]
+            self.decoherenceDecay(time_steps)
