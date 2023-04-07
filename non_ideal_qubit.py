@@ -1,4 +1,5 @@
 import numpy as np
+import gates.ugate as uGate
 
 class NonIdealQubit:
 
@@ -73,3 +74,16 @@ class NonIdealQubit:
             a_start_value = a
             self.qubit_state = [[abs(b)],[abs(a)]]
             self.decoherenceDecay(time_steps)
+
+    def uGate(self, theta, phi, lamda):
+        steps = 1000
+        gate_time = 50
+        theta_steps = theta/steps
+        phi_steps = phi/steps
+        lamda_steps = lamda/steps
+        time_steps  = gate_time/steps
+        values = []
+        for step in range(0, steps):
+            self.qubit_state = uGate.u_gate.u_gate(self.qubit_state, theta_steps, phi_steps, lamda_steps)
+            self.decoherenceDecay(time_steps)
+            values.append(self.qubit_state[0][0])
