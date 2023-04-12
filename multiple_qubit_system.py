@@ -120,13 +120,13 @@ class MultipleQubitSystem:
             qubit_obj.tDaggerGate()
             self.qubit_state[qubit_num-1] = qubit_obj.getState()
 
-    def uGate(self, qubit_num):
+    def uGate(self, qubit_num, theta, phi, lamda):
         if(self.num_of_qubits<qubit_num):
             raise Exception("Required Qubit number does not exist")
         else:
             qubit = self.qubit_state[qubit_num-1]
             qubit_obj = singleQubit.SingleQubit(qubit[1][0])
-            qubit_obj.uGate()
+            qubit_obj.uGate(theta, phi, lamda)
             self.qubit_state[qubit_num-1] = qubit_obj.getState()
 
     def cnotGate(self, qubit1, qubit2):
