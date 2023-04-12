@@ -7,7 +7,6 @@ class NonIdealQubit:
         if(x<=1 and x>=0):
             y = (1 - x**2)**0.5
             self.qubit_state = [[y],[x]]
-            # self.decays = ideal
             self.omega = 2*np.pi*freq
             self.driveline_dissipation_qf = 50000000
             self.driveline_noise_qf = 50000000
@@ -82,8 +81,6 @@ class NonIdealQubit:
         phi_steps = phi/steps
         lamda_steps = lamda/steps
         time_steps  = gate_time/steps
-        values = []
         for step in range(0, steps):
             self.qubit_state = uGate.u_gate.u_gate(self.qubit_state, theta_steps, phi_steps, lamda_steps)
             self.decoherenceDecay(time_steps)
-            values.append(self.qubit_state[0][0])
