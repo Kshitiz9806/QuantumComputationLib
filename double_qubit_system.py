@@ -12,7 +12,7 @@ class DoubleQubitSystem:
         d = q1.qubit_state[1][0]*q2.qubit_state[1][0]
         self.qubit_state = [[a],[b],[c],[d]]
 
-    def print_state(self):
+    def printState(self):
         print("(" + str(self.qubit_state[0][0]) + ")|00} + (" + str(self.qubit_state[1][0]) + ")|01} + (" + str(self.qubit_state[2][0]) + ")|10} + (" + str(self.qubit_state[3][0]) + ")|11}")
 
     def cnotGate(self):
